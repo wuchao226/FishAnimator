@@ -12,7 +12,6 @@ import android.graphics.PathMeasure;
 import android.graphics.PointF;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -199,6 +198,9 @@ public class FishRelativeLayout extends RelativeLayout {
       public void onAnimationUpdate(ValueAnimator animator) {
         float fraction = animator.getAnimatedFraction();
         // 计算 tan 切线
+        // distance : 这个参数就是确定要获取路径上哪个位置的点
+        // pos[] ：根据distance返回点的坐标信息并保存在传入的pos[]内， X保存在pos[0], Y则在pos[1]
+        // tan[] : 根据distance返回点的角度信息并保存传入tan[]内 ，主要结合float degree = (float) (Math.atan2(mTan[1], mTan[0]) * 180 / Math.PI);
         pathMeasure.getPosTan(pathMeasure.getLength() * fraction, null, tan);
         // y轴与实际坐标相反，tan[1] 需要取反
         float angle = (float) Math.toDegrees(Math.atan2(-tan[1], tan[0]));

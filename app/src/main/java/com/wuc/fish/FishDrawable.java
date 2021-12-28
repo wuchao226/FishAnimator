@@ -1,6 +1,5 @@
 package com.wuc.fish;
 
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -12,7 +11,6 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.LinearInterpolator;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import java.util.Random;
 
 /**
  * @author : wuchao5
